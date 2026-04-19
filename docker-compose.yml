@@ -10,6 +10,13 @@ services:
 
 
     ports:
-      - "4317: 4317"
-      - "4318: 4318"
-      - "3000: 3000"
+      - "4317:4317"
+      - "4318:4318"
+      - "3000:3000"
+
+    volumes:
+      - ./config/loki.yaml:/etc/loki/local-config.yaml
+      - ./config/tempo.yaml:/etc/tempo/local-config.yaml
+      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - ./config/otel.yaml:/etc/otelcol/config.yaml
+    
