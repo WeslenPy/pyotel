@@ -27,6 +27,8 @@ schema_config:
 
 limits_config:
   retention_period: 24h
+  volume_enalbled: true
+  volume_amount: 5GB
 
 compactor:
   working_directory: /data/retention
