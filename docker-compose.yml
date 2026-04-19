@@ -1,0 +1,15 @@
+services:
+  lgtm:
+    image: grafana/otel-lgtm
+    environment:
+      - ENABLE_LOGS_GRAFANA=true
+      - ENABLE_LOGS_LOKI=true
+      - ENABLE_LOGS_PROMETHEUS=true
+      - ENABLE_LOGS_TEMPO=true
+      - ENABLE_LOGS_OTELCOL=true
+
+
+    ports:
+      - "4317: 4317"
+      - "4318: 4318"
+      - "3000: 3000"
