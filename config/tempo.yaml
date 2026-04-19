@@ -43,9 +43,6 @@ storage:
     local:
       path: /data/tempo/blocks
 
-compactor:
-  retention_period: 24h
-
 metrics_generator:
   processor:
     local_blocks:
