@@ -15,8 +15,7 @@ services:
       - "3000:3000"
 
     volumes:
-      - ./config/loki.yaml:/etc/loki/local-config.yaml
-      - ./config/tempo.yaml:/etc/tempo/local-config.yaml
-      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml
-      - ./config/otel.yaml:/etc/otelcol/config.yaml
+      - ./config/loki.yaml:/otel-lgtm/loki-config.yaml
+      - ./config/tempo.yaml:/otel-lgtm/tempo-config.yaml
+      - ./config/prometheus.yaml:/otel-lgtm/prometheus.yaml
     
