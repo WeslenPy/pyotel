@@ -46,24 +46,6 @@ storage:
 compactor:
   retention_period: 24h
 
-backend_scheduler:
-  work:
-    prune_age: 1h
-    dead_job_timeout: 24h
-  maintenance_interval: 1m
-  backend_flush_interval: 1m
-  provider:
-    retention:
-      interval: 1h
-    compaction:
-      measure_interval: 1m
-      max_jobs_per_tenant: 1000
-      min_input_blocks: 2
-      max_input_blocks: 4
-      max_compaction_level: 0
-      min_cycle_interval: 30s
-  job_timeout: 15s
-  local_work_path: /var/tempo
 metrics_generator:
   processor:
     local_blocks:
@@ -80,7 +62,6 @@ metrics_generator:
     remote_write:
       - url: http://127.0.0.1:9090/api/v1/write
         send_exemplars: true
-
 
 overrides:
   metrics_generator_processors: [service-graphs, local-blocks, span-metrics]
