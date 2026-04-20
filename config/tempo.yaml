@@ -60,5 +60,9 @@ metrics_generator:
       - url: http://127.0.0.1:9090/api/v1/write
         send_exemplars: true
 
+compactor:
+  compaction:
+    block_retention: 12h
+
 overrides:
   metrics_generator_processors: [service-graphs, local-blocks, span-metrics]

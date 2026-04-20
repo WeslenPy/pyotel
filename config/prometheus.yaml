@@ -35,4 +35,4 @@ otlp:
 storage:
   tsdb:
     out_of_order_time_window: 10m
-    retention: 24h
+    retention: 10h

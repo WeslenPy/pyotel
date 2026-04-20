@@ -4,7 +4,6 @@ services:
     environment:
       - ENABLE_LOGS_ALL=true
 
-
     ports:
       - "4317:4317"
       - "4318:4318"
@@ -14,4 +13,21 @@ services:
       - ./config/loki.yaml:/otel-lgtm/loki-config.yaml
       - ./config/tempo.yaml:/otel-lgtm/tempo-config.yaml
       - ./config/prometheus.yaml:/otel-lgtm/prometheus.yaml
+      - ./config/run-prometheus.sh:/otel-lgtm/run-prometheus.sh:ro 
+
+
+      # Loki data (logs)
+      - ./data/loki:/loki
+
+      # Prometheus data (metrics)
+      - ./data/prometheus:/data/prometheus
+   
+      # Tempo data (traces)
+      - ./data/tempo/wal:/tmp/tempo/wal
+      - ./data/tempo/blocks:/tmp/tempo/blocks
+      - ./data/tempo/generator/wal:/tmp/tempo/generator/wal
+      - ./data/tempo/generator/traces:/tmp/tempo/generator/traces
+
+      # Grafana data (dashboards)
+      - ./data/grafana:/data/grafana
     

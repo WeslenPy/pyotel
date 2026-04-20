@@ -42,3 +42,6 @@ frontend:
 
 query_scheduler:
   use_scheduler_ring: false
+
+limits_config:
+  retention_period: 10h
